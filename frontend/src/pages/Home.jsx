@@ -21,7 +21,7 @@ const Home = () => {
 
     try {
       setIsUploading(true);
-      const response = await fetch("http://localhost:8080/upload", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/upload`, {
         method: "POST",
         body: formData,
       });
@@ -61,7 +61,7 @@ const Home = () => {
 
     try {
       setIsSearching(true);
-      const response = await fetch(`http://localhost:8080/search?key=${encodeURIComponent(query)}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/search?key=${encodeURIComponent(query)}`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

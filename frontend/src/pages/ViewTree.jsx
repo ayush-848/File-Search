@@ -7,7 +7,7 @@ const ViewTree = () => {
   useEffect(() => {
     const fetchTree = async () => {
       try {
-        const response = await fetch("http://localhost:8080/show-tree");
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/show-tree`);
         const data = await response.json();
         setTreeData(data.data); // Assuming the response structure is { data: ... }
       } catch (error) {
