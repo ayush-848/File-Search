@@ -12,6 +12,10 @@ app.use(express.json());
 
 const tree = new BinaryTree();
 
+app.get('/',(req,res)=>{
+  res.send('Welcome to File Search')
+})
+
 // Upload endpoint
 app.post("/upload", 
   upload.single("file"), // Multer middleware for file upload
